@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Evidence | HHA Investigation Report</title>
+    <title>Evidence | Confidential Investigation Report</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
@@ -29,9 +29,9 @@
         <nav class="navbar">
             <div class="container navbar-container">
                 <a href="index.html" class="navbar-brand">
-                    <i class="fas fa-hospital-user"></i>
-                    HHA Hospital Medicine
-                    <span class="confidential-badge">Confidential</span>
+                    <i class="fas fa-lock"></i>
+                    Confidential
+                    <span class="confidential-badge">Investigation</span>
                 </a>
 
                 <button class="navbar-toggle" onclick="toggleNav()">
@@ -47,7 +47,6 @@
                     <li><a href="evidence.html" class="nav-link active">Evidence</a></li>
                     <li><a href="actions.html" class="nav-link">Actions</a></li>
                     <li><a href="summary.html" class="nav-link">Summary</a></li>
-                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
                     <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
                 </ul>
             </div>
@@ -99,9 +98,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('All_Activity_Audit.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/All_Activity_Audit.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('All_Activity_Audit.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -119,9 +118,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('Deletion_Audit.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/Deletion_Audit.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('Deletion_Audit.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -139,9 +138,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('Deletion_Timeline.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/Deletion_Timeline.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('Deletion_Timeline.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -159,9 +158,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('Detailed_Deletion_Timeline.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/Detailed_Deletion_Timeline.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('Detailed_Deletion_Timeline.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -179,9 +178,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('FINAL_INVESTIGATION_REPORT.txt')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/FINAL_INVESTIGATION_REPORT.txt" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('FINAL_INVESTIGATION_REPORT.txt')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -199,9 +198,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('INVESTIGATION_SUMMARY.txt')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/INVESTIGATION_SUMMARY.txt" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('INVESTIGATION_SUMMARY.txt')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -219,9 +218,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('Jan27_Mass_Deletion_Details.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/Jan27_Mass_Deletion_Details.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('Jan27_Mass_Deletion_Details.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
 
@@ -239,9 +238,9 @@
                                     <button class="btn btn-sm btn-outline" onclick="viewDocument('Jan30_Deletion_Details.csv')">
                                         <i class="fas fa-eye"></i> View
                                     </button>
-                                    <a href="documents/Jan30_Deletion_Details.csv" download class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" onclick="requestDownload('Jan30_Deletion_Details.csv')">
                                         <i class="fas fa-download"></i> Download
-                                    </a>
+                                    </button>
                                 </div>
                             </li>
                         </ul>
@@ -281,7 +280,7 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Collected By</strong></td>
-                                    <td>Akhil Reddy, IT Administrator</td>
+                                    <td>IT Administrator</td>
                                 </tr>
                             </table>
                         </div>
@@ -294,9 +293,36 @@
         <!-- Footer -->
         <footer class="py-3 text-center text-muted" style="background: var(--white); border-top: 1px solid var(--border);">
             <div class="container">
-                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+                <small>Confidential Investigation Report | January 2026</small>
             </div>
         </footer>
+    </div>
+
+    <!-- Download Password Modal -->
+    <div class="modal-overlay" id="download-password-modal">
+        <div class="modal" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-lock"></i>
+                    <span>Password Required</span>
+                </h3>
+                <button class="modal-close" onclick="closeDownloadModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted mb-2">Enter the password to download this file:</p>
+                <input type="password" id="download-password" class="form-control" placeholder="Enter password" autocomplete="off">
+                <div id="download-password-error" class="alert alert-danger mt-2" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>Incorrect password. Please try again.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="verifyDownloadPassword()">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="btn btn-secondary" onclick="closeDownloadModal()">Cancel</button>
+            </div>
+        </div>
     </div>
 
     <!-- Document Viewer Modal -->

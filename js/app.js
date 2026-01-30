@@ -1,10 +1,16 @@
 /**
- * HHA Investigation Report - Main Application Module
+ * Confidential Investigation Report - Main Application Module
  * Document viewer and general app functionality
  */
 
 // Maximum rows to display in preview
 const MAX_PREVIEW_ROWS = 100;
+
+// Download password (same as site password)
+const DOWNLOAD_PASSWORD = 'HHA2026Secure!';
+
+// Track pending download
+let pendingDownloadFile = null;
 
 /**
  * Open document viewer modal
@@ -207,7 +213,79 @@ function printReport() {
     window.print();
 }
 
+/**
+ * Request download with password protection
+ * @param {string} filename - Name of the file to download
+ */
+function requestDownload(filename) {
+    pendingDownloadFile = filename;
+    const modal = document.getElementById('download-password-modal');
+    const passwordInput = document.getElementById('download-password');
+    const errorDiv = document.getElementById('download-password-error');
+
+    // Reset state
+    passwordInput.value = '';
+    errorDiv.style.display = 'none';
+
+    // Show modal
+    modal.classList.add('active');
+    passwordInput.focus();
+}
+
+/**
+ * Verify download password and proceed with download
+ */
+function verifyDownloadPassword() {
+    const passwordInput = document.getElementById('download-password');
+    const errorDiv = document.getElementById('download-password-error');
+    const enteredPassword = passwordInput.value;
+
+    if (enteredPassword === DOWNLOAD_PASSWORD) {
+        // Password correct - proceed with download
+        closeDownloadModal();
+
+        // Create download link and trigger
+        const link = document.createElement('a');
+        link.href = `documents/${pendingDownloadFile}`;
+        link.download = pendingDownloadFile;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        pendingDownloadFile = null;
+    } else {
+        // Show error
+        errorDiv.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+    }
+}
+
+/**
+ * Close download password modal
+ */
+function closeDownloadModal() {
+    const modal = document.getElementById('download-password-modal');
+    modal.classList.remove('active');
+    pendingDownloadFile = null;
+}
+
+// Handle Enter key in download password field
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('download-password');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyDownloadPassword();
+            }
+        });
+    }
+});
+
 // Export functions for global use
 window.viewDocument = viewDocument;
 window.closeModal = closeModal;
 window.printReport = printReport;
+window.requestDownload = requestDownload;
+window.verifyDownloadPassword = verifyDownloadPassword;
+window.closeDownloadModal = closeDownloadModal;
