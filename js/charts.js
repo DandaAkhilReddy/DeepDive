@@ -125,17 +125,19 @@ function getBorderColor(status) {
 
 /**
  * Format date for display
+ * Note: Adding T12:00:00 to avoid timezone issues where dates shift by one day
  */
 function formatDate(dateStr) {
-    const date = new Date(dateStr);
+    const date = new Date(dateStr + 'T12:00:00');
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
 /**
  * Format date for table display
+ * Note: Adding T12:00:00 to avoid timezone issues where dates shift by one day
  */
 function formatDateFull(dateStr) {
-    const date = new Date(dateStr);
+    const date = new Date(dateStr + 'T12:00:00');
     return date.toLocaleDateString('en-US', {
         weekday: 'short',
         year: 'numeric',
