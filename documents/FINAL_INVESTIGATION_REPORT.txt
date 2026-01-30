@@ -1,0 +1,169 @@
+﻿============================================================
+        CONFIDENTIAL - FOR LEADERSHIP REVIEW ONLY
+============================================================
+
+        EMPLOYEE INVESTIGATION REPORT
+        Email Deletion & Data Destruction
+
+============================================================
+REPORT DETAILS
+============================================================
+Date Generated:     January 30, 2026 02:20 PM
+Investigator:       Akhil Reddy (areddy@hhamedicine.com)
+Subject Employee:   Alyn Fernandez (afernandez@hhamedicine.com)
+Case Type:          Intentional Data Destruction
+Status:             EVIDENCE SECURED
+
+============================================================
+EXECUTIVE SUMMARY
+============================================================
+Investigation reveals that employee Alyn Fernandez 
+intentionally deleted approximately 2,300+ company emails 
+over a 90-day period. Two mass deletion events were 
+identified that significantly exceed normal email 
+management patterns, indicating deliberate data destruction.
+
+============================================================
+CRITICAL FINDINGS
+============================================================
+
+>>> MASS DELETION EVENT #1 <
+------------------------------
+Date:               January 27, 2026
+Time:               5:56 PM EST
+Emails Deleted:     1,304 emails
+IP Address:         98.58.200.46
+Location:           Port Saint Lucie, Florida, United States
+ISP:                Comcast Cable Communications, LLC
+Device Used:        Outlook Desktop (MSExchangeRPC)
+Status:             HIGHLY SUSPICIOUS - 87x normal activity
+
+>>> MASS DELETION EVENT #2 <
+------------------------------
+Date:               January 30, 2026 (Today)
+Time:               2:13 PM - 4:07 PM EST
+Emails Deleted:     505 emails
+IP Address:         98.58.200.46
+Location:           Port Saint Lucie, Florida, United States
+Device Used:        Outlook Desktop (MSExchangeRPC)
+Status:             ACTIVE DESTRUCTION - Same day as investigation
+
+============================================================
+BASELINE COMPARISON
+============================================================
+Normal Daily Deletions:     5-15 emails
+January 27 Deletions:       1,304 emails (87x normal)
+January 30 Deletions:       505 emails (34x normal)
+Total Deleted (90 days):    ~2,300+ emails
+Recoverable Items:          454 emails (403.9 MB)
+
+============================================================
+TYPES OF EMAILS DELETED (Sample from Jan 27)
+============================================================
+- Patient discharge information
+- Billing records (Jackson Billing)
+- Physician CVs and recruitment emails
+- Meeting correspondence
+- A/R aging reports (financial data)
+- Patient information forwards
+- Press Ganey Provider Reports
+- Medrina Proposed Agreement
+- Page Management communications
+
+============================================================
+DETAILED TIMELINE
+============================================================
+DATE                DELETIONS   STATUS
+----------------------------------------------------------
+Nov 6 - Jan 26      5-23/day    Normal daily activity
+January 27, 2026    1,304       *** MASS DELETION EVENT ***
+January 28, 2026    0           No activity
+January 29, 2026    5           Normal
+January 30, 2026    505         *** CONTINUED DESTRUCTION ***
+
+============================================================
+TECHNICAL EVIDENCE
+============================================================
+Source IP Address:      98.58.200.46
+Geographic Location:    Port Saint Lucie, Florida
+Country:                United States
+Internet Provider:      Comcast Cable Communications, LLC
+Organization:           Comcast Cable Communications, LLC
+Application Used:       Microsoft Outlook Desktop
+Connection Type:        MSExchangeRPC (Direct Exchange)
+
+============================================================
+ACTIONS TAKEN BY IT
+============================================================
+[X] Litigation Hold ENABLED
+    - Date: January 30, 2026 at 1:37:19 PM
+    - Duration: 365 days
+    - Status: All mailbox data now preserved
+
+[X] Audit Logs Exported
+    - 90 days of user activity captured
+    - All deletion events documented
+    - IP addresses and timestamps recorded
+
+[X] Evidence Files Secured
+    - Stored in: C:\Reports\Afernandez_Investigation\
+    - Ready for SharePoint upload
+    - Chain of custody maintained
+
+============================================================
+EVIDENCE FILES ATTACHED
+============================================================
+FILE NAME                           SIZE        DESCRIPTION
+------------------------------------------------------------------
+1. All_Activity_Audit.csv           13.8 MB     Complete 90-day activity
+2. Deletion_Audit.csv               6.5 MB      All deletion events
+3. Deletion_Timeline.csv            6.2 MB      Chronological deletions
+4. Detailed_Deletion_Timeline.csv   318 KB      IP/Device/Subject details
+5. Jan27_Mass_Deletion_Details.csv  -           Jan 27 mass deletion
+6. Jan30_Deletion_Details.csv       -           Jan 30 deletion details
+7. Mailbox_Stats.csv                -           Folder statistics
+
+============================================================
+CONCLUSION
+============================================================
+The evidence conclusively demonstrates INTENTIONAL destruction 
+of company data by employee Alyn Fernandez:
+
+1. Two mass deletion events (1,304 and 505 emails) far exceed
+   normal email management behavior (5-15 emails/day)
+
+2. Deleted emails include sensitive business data:
+   - Patient information
+   - Financial/billing records
+   - Recruitment documents
+   - Internal agreements
+
+3. All deletions originated from the same IP address
+   (Port Saint Lucie, Florida) using Outlook Desktop
+
+4. The timing of continued deletions on Jan 30 suggests
+   awareness of potential investigation or termination
+
+============================================================
+RECOMMENDED ACTIONS
+============================================================
+1. IMMEDIATE: Block user access to all company systems
+2. IMMEDIATE: Revoke all active sessions
+3. PRESERVE: Maintain litigation hold for legal review
+4. RECOVER: Restore deleted emails if needed for business
+5. LEGAL: Consult with legal counsel regarding data destruction
+6. HR: Document in employee file for termination proceedings
+7. SECURITY: Review access logs for other suspicious activity
+
+============================================================
+PREPARED BY
+============================================================
+Name:           Akhil Reddy
+Title:          IT Administrator
+Email:          areddy@hhamedicine.com
+Date:           January 30, 2026
+Time:           02:20 PM
+
+============================================================
+CLASSIFICATION: CONFIDENTIAL - HR/LEGAL USE ONLY
+============================================================

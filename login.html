@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Confidential Investigation Portal | HHA Hospital Medicine</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <!-- Logo & Branding -->
+            <div class="login-logo">
+                <i class="fas fa-hospital-user"></i> HHA Hospital Medicine
+            </div>
+
+            <h1 class="login-title">Confidential Investigation Portal</h1>
+            <p class="login-subtitle">Authorized Personnel Only</p>
+
+            <!-- Login Form -->
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-lock"></i> Access Password
+                    </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter access password"
+                        autocomplete="off"
+                        required
+                    >
+                    <p id="login-error" class="form-error">
+                        Incorrect password. Please try again.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                    <i class="fas fa-sign-in-alt"></i> Access Report
+                </button>
+            </form>
+
+            <!-- Security Notice -->
+            <div class="login-footer">
+                <i class="fas fa-shield-halved"></i>
+                <p>This portal contains confidential HR and legal information.<br>
+                Unauthorized access is strictly prohibited.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Script -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

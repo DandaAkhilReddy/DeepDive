@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Executive Summary | HHA Investigation Report</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation (hidden when printing) -->
+        <nav class="navbar no-print">
+            <div class="container navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fas fa-hospital-user"></i>
+                    HHA Hospital Medicine
+                    <span class="confidential-badge">Confidential</span>
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li><a href="index.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                    <li><a href="incidents.html" class="nav-link">Incidents</a></li>
+                    <li><a href="evidence.html" class="nav-link">Evidence</a></li>
+                    <li><a href="actions.html" class="nav-link">Actions</a></li>
+                    <li><a href="summary.html" class="nav-link active">Summary</a></li>
+                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
+                    <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Print Button -->
+                <div class="card mb-3 no-print">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>
+                            <h1 class="mb-1"><i class="fas fa-file-alt"></i> Executive Summary</h1>
+                            <p class="text-muted mb-0">Print-ready formal investigation report</p>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="printReport()">
+                            <i class="fas fa-print"></i> Print Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Printable Summary Document -->
+                <div class="summary-document card">
+                    <!-- Header -->
+                    <div class="summary-header">
+                        <h1>HHA HOSPITAL MEDICINE</h1>
+                        <h2 style="font-size: 1rem; color: var(--text-medium); margin-bottom: 0.5rem;">CONFIDENTIAL INVESTIGATION REPORT</h2>
+                        <p style="margin: 0; color: var(--red); font-weight: 600;">
+                            <i class="fas fa-lock"></i> FOR LEADERSHIP REVIEW ONLY
+                        </p>
+                    </div>
+
+                    <!-- Report Details -->
+                    <div class="summary-section">
+                        <h2>Report Details</h2>
+                        <table class="table" style="margin-bottom: 0;">
+                            <tr>
+                                <td><strong>Date Generated</strong></td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Investigator</strong></td>
+                                <td>Akhil Reddy, IT Administrator (areddy@hhamedicine.com)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subject Employee</strong></td>
+                                <td>Alyn Fernandez (afernandez@hhamedicine.com)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Case Type</strong></td>
+                                <td>Intentional Data Destruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status</strong></td>
+                                <td><span class="badge badge-success">EVIDENCE SECURED</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Executive Summary -->
+                    <div class="summary-section">
+                        <h2>Executive Summary</h2>
+                        <p>
+                            Investigation reveals that employee Alyn Fernandez intentionally deleted approximately
+                            <strong>2,300+ company emails</strong> over a 90-day period. Two mass deletion events were
+                            identified that significantly exceed normal email management patterns, indicating
+                            <strong>deliberate data destruction</strong>.
+                        </p>
+                        <p>
+                            The deleted emails contained sensitive business information including patient data,
+                            billing records, physician recruitment correspondence, financial reports, and business
+                            agreements. IT has preserved all evidence and enabled a litigation hold to prevent
+                            further data loss.
+                        </p>
+                    </div>
+
+                    <!-- Key Findings -->
+                    <div class="summary-section">
+                        <h2>Key Findings</h2>
+                        <ul style="padding-left: 1.5rem;">
+                            <li><strong>2,300+ emails</strong> intentionally deleted over 90 days</li>
+                            <li><strong>Two mass deletion events</strong> identified (January 27 and January 30, 2026)</li>
+                            <li>Deletion activity was <strong>87x higher than normal</strong> on January 27</li>
+                            <li>Sensitive business data affected (patient info, billing, contracts)</li>
+                            <li>All deletions traced to <strong>same IP address</strong> (98.58.200.46)</li>
+                            <li>Evidence has been <strong>preserved and secured</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Incident Details -->
+                    <div class="summary-section">
+                        <h2>Critical Incidents</h2>
+
+                        <h3 style="font-size: 0.9rem; color: var(--red); margin-top: 1rem;">Mass Deletion Event #1</h3>
+                        <table class="table">
+                            <tr>
+                                <td><strong>Date</strong></td>
+                                <td>January 27, 2026 at 5:56 PM EST</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Emails Deleted</strong></td>
+                                <td>1,304 emails in 6 seconds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Comparison</strong></td>
+                                <td>87x normal daily activity</td>
+                            </tr>
+                        </table>
+
+                        <h3 style="font-size: 0.9rem; color: var(--red); margin-top: 1rem;">Mass Deletion Event #2</h3>
+                        <table class="table">
+                            <tr>
+                                <td><strong>Date</strong></td>
+                                <td>January 30, 2026 (2:13 PM - 4:07 PM EST)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Emails Deleted</strong></td>
+                                <td>505 emails over ~2 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Comparison</strong></td>
+                                <td>34x normal daily activity</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Impact Assessment -->
+                    <div class="summary-section">
+                        <h2>Impact Assessment</h2>
+                        <table class="table">
+                            <tr>
+                                <td><strong>Total Deleted</strong></td>
+                                <td>2,300+ emails</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recoverable</strong></td>
+                                <td>454 emails (403.9 MB) - can be restored if needed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Permanently Lost</strong></td>
+                                <td>15 emails - cannot be recovered</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Types Affected</strong></td>
+                                <td>Patient information, billing records, contracts, financial reports, recruitment data</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Actions Taken -->
+                    <div class="summary-section">
+                        <h2>Actions Taken</h2>
+                        <table class="table">
+                            <tr>
+                                <td><i class="fas fa-check-circle text-success"></i> <strong>Litigation Hold</strong></td>
+                                <td>Enabled January 30, 2026 at 1:37:19 PM (365 days)</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-check-circle text-success"></i> <strong>Audit Logs</strong></td>
+                                <td>90 days of activity exported and preserved</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-check-circle text-success"></i> <strong>Evidence Files</strong></td>
+                                <td>8 files (~27 MB) secured for review</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-check-circle text-success"></i> <strong>Access Control</strong></td>
+                                <td>Authorized personnel granted investigation access</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="summary-section">
+                        <h2>Recommendations</h2>
+                        <ol style="padding-left: 1.5rem;">
+                            <li><strong>IMMEDIATE:</strong> Block user access to all company systems</li>
+                            <li><strong>IMMEDIATE:</strong> Revoke all active sessions</li>
+                            <li><strong>PRESERVE:</strong> Maintain litigation hold for legal review</li>
+                            <li><strong>RECOVER:</strong> Restore deleted emails if needed for business</li>
+                            <li><strong>LEGAL:</strong> Consult with legal counsel regarding data destruction</li>
+                            <li><strong>HR:</strong> Document in employee file for termination proceedings</li>
+                            <li><strong>SECURITY:</strong> Review access logs for other suspicious activity</li>
+                        </ol>
+                    </div>
+
+                    <!-- Technical Evidence -->
+                    <div class="summary-section">
+                        <h2>Technical Evidence</h2>
+                        <table class="table">
+                            <tr>
+                                <td><strong>Source IP Address</strong></td>
+                                <td>98.58.200.46</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Location</strong></td>
+                                <td>Port Saint Lucie, Florida, United States</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Internet Provider</strong></td>
+                                <td>Comcast Cable Communications, LLC</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Applications Used</strong></td>
+                                <td>Microsoft Outlook Desktop, ActiveSync (Mobile)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Conclusion -->
+                    <div class="summary-section">
+                        <h2>Conclusion</h2>
+                        <p>
+                            The evidence conclusively demonstrates <strong>intentional destruction of company data</strong>
+                            by employee Alyn Fernandez. Two mass deletion events (1,304 and 505 emails) far exceed
+                            normal email management behavior (5-15 emails/day). The timing of continued deletions
+                            on January 30 suggests awareness of potential investigation or termination.
+                        </p>
+                        <p>
+                            All available evidence has been preserved. The mailbox is now protected under litigation
+                            hold for 365 days. Immediate action is recommended to prevent further data loss and
+                            to address this serious breach of company policy.
+                        </p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="summary-footer">
+                        <p style="margin-bottom: 0.5rem;"><strong>PREPARED BY</strong></p>
+                        <p style="margin: 0;">
+                            Akhil Reddy<br>
+                            IT Administrator<br>
+                            HHA Hospital Medicine<br>
+                            areddy@hhamedicine.com<br>
+                            <em>January 30, 2026</em>
+                        </p>
+                        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--red);">
+                            <i class="fas fa-lock"></i> CLASSIFICATION: CONFIDENTIAL - HR/LEGAL USE ONLY
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer (hidden when printing) -->
+        <footer class="py-3 text-center text-muted no-print" style="background: var(--white); border-top: 1px solid var(--border);">
+            <div class="container">
+                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

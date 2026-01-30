@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Evidence | HHA Investigation Report</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Papa Parse for CSV -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fas fa-hospital-user"></i>
+                    HHA Hospital Medicine
+                    <span class="confidential-badge">Confidential</span>
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li><a href="index.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                    <li><a href="incidents.html" class="nav-link">Incidents</a></li>
+                    <li><a href="evidence.html" class="nav-link active">Evidence</a></li>
+                    <li><a href="actions.html" class="nav-link">Actions</a></li>
+                    <li><a href="summary.html" class="nav-link">Summary</a></li>
+                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
+                    <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="card mb-3">
+                    <h1><i class="fas fa-folder-open"></i> Evidence Documentation</h1>
+                    <p class="text-muted mb-0">All evidence files collected during the investigation</p>
+                </div>
+
+                <!-- Evidence Summary -->
+                <div class="metric-grid mb-3" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                    <div class="metric-card primary">
+                        <div class="metric-value">8</div>
+                        <div class="metric-label">Files Collected</div>
+                    </div>
+                    <div class="metric-card success">
+                        <div class="metric-value">~27MB</div>
+                        <div class="metric-label">Total Data</div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="metric-value">Jan 30</div>
+                        <div class="metric-label">Collection Date</div>
+                    </div>
+                </div>
+
+                <!-- Evidence Files List -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-file-alt"></i> Evidence Files</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="file-list">
+                            <!-- Activity Log -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        All_Activity_Audit.csv
+                                    </div>
+                                    <div class="file-description">Complete 90-day user activity log</div>
+                                    <div class="file-size">13.8 MB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('All_Activity_Audit.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/All_Activity_Audit.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Deletion Audit -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        Deletion_Audit.csv
+                                    </div>
+                                    <div class="file-description">All deletion events recorded</div>
+                                    <div class="file-size">6.5 MB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('Deletion_Audit.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/Deletion_Audit.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Deletion Timeline -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        Deletion_Timeline.csv
+                                    </div>
+                                    <div class="file-description">Chronological deletion timestamps</div>
+                                    <div class="file-size">6.2 MB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('Deletion_Timeline.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/Deletion_Timeline.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Detailed Timeline -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        Detailed_Deletion_Timeline.csv
+                                    </div>
+                                    <div class="file-description">IP addresses, devices, and email subjects</div>
+                                    <div class="file-size">318 KB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('Detailed_Deletion_Timeline.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/Detailed_Deletion_Timeline.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Final Report -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-alt"></i>
+                                        FINAL_INVESTIGATION_REPORT.txt
+                                    </div>
+                                    <div class="file-description">Complete investigation report</div>
+                                    <div class="file-size">6.9 KB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('FINAL_INVESTIGATION_REPORT.txt')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/FINAL_INVESTIGATION_REPORT.txt" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Investigation Summary -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-alt"></i>
+                                        INVESTIGATION_SUMMARY.txt
+                                    </div>
+                                    <div class="file-description">Quick summary document</div>
+                                    <div class="file-size">5.4 KB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('INVESTIGATION_SUMMARY.txt')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/INVESTIGATION_SUMMARY.txt" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Jan 27 Details -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        Jan27_Mass_Deletion_Details.csv
+                                    </div>
+                                    <div class="file-description">January 27 mass deletion specifics</div>
+                                    <div class="file-size">185 KB</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('Jan27_Mass_Deletion_Details.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/Jan27_Mass_Deletion_Details.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- Jan 30 Details -->
+                            <li class="file-item">
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <i class="fas fa-file-csv"></i>
+                                        Jan30_Deletion_Details.csv
+                                    </div>
+                                    <div class="file-description">January 30 deletion details</div>
+                                    <div class="file-size">-</div>
+                                </div>
+                                <div class="file-actions">
+                                    <button class="btn btn-sm btn-outline" onclick="viewDocument('Jan30_Deletion_Details.csv')">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                    <a href="documents/Jan30_Deletion_Details.csv" download class="btn btn-sm btn-primary">
+                                        <i class="fas fa-download"></i> Download
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technical Evidence Summary -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-fingerprint"></i> Technical Evidence</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Source IP Address</strong></td>
+                                    <td><code>98.58.200.46</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Geographic Location</strong></td>
+                                    <td>Port Saint Lucie, Florida, United States</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Internet Provider</strong></td>
+                                    <td>Comcast Cable Communications, LLC</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Applications Used</strong></td>
+                                    <td>
+                                        Microsoft Outlook Desktop (MSExchangeRPC)<br>
+                                        Mobile Device (ActiveSync)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Evidence Collection Date</strong></td>
+                                    <td>January 30, 2026</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Collected By</strong></td>
+                                    <td>Akhil Reddy, IT Administrator</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-3 text-center text-muted" style="background: var(--white); border-top: 1px solid var(--border);">
+            <div class="container">
+                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Document Viewer Modal -->
+    <div class="modal-overlay" id="document-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">
+                    <i class="fas fa-file"></i>
+                    <span id="modal-filename">Document</span>
+                </h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="document-content">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-download" href="#" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Full File
+                </a>
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

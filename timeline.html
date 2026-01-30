@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Timeline | HHA Investigation Report</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fas fa-hospital-user"></i>
+                    HHA Hospital Medicine
+                    <span class="confidential-badge">Confidential</span>
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li><a href="index.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="timeline.html" class="nav-link active">Timeline</a></li>
+                    <li><a href="incidents.html" class="nav-link">Incidents</a></li>
+                    <li><a href="evidence.html" class="nav-link">Evidence</a></li>
+                    <li><a href="actions.html" class="nav-link">Actions</a></li>
+                    <li><a href="summary.html" class="nav-link">Summary</a></li>
+                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
+                    <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="card mb-3">
+                    <h1><i class="fas fa-clock"></i> 90-Day Activity Timeline</h1>
+                    <p class="text-muted mb-0">Complete deletion history from November 6, 2025 to January 30, 2026</p>
+                </div>
+
+                <!-- Key Insight -->
+                <div class="alert alert-danger mb-3">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <strong>Key Insight:</strong> The average daily deletion was <strong>8 emails</strong>.
+                        January 27 saw <strong>1,304 deletions</strong> - that's <strong>163x the average</strong>.
+                    </div>
+                </div>
+
+                <!-- Full Timeline Chart -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-chart-bar"></i> Email Deletion Activity</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" style="min-height: 400px;">
+                            <canvas id="fullTimelineChart"></canvas>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center mt-3">
+                            <span class="badge badge-danger"><i class="fas fa-circle"></i> Critical (>100)</span>
+                            <span class="badge badge-warning"><i class="fas fa-circle"></i> Elevated (>15)</span>
+                            <span class="badge badge-primary"><i class="fas fa-circle"></i> Normal (0-15)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="metric-grid mb-3">
+                    <div class="metric-card primary">
+                        <div class="metric-value">90</div>
+                        <div class="metric-label">Days Monitored</div>
+                    </div>
+                    <div class="metric-card danger">
+                        <div class="metric-value">2,300+</div>
+                        <div class="metric-label">Total Deleted</div>
+                    </div>
+                    <div class="metric-card success">
+                        <div class="metric-value">8</div>
+                        <div class="metric-label">Daily Average</div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Critical Days</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-table"></i> Detailed Activity Log</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Emails Deleted</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timeline-tbody">
+                                    <!-- Generated by charts.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-3 text-center text-muted" style="background: var(--white); border-top: 1px solid var(--border);">
+            <div class="container">
+                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/charts.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

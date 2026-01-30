@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Executive Dashboard | HHA Investigation Report</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fas fa-hospital-user"></i>
+                    HHA Hospital Medicine
+                    <span class="confidential-badge">Confidential</span>
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                    <li><a href="incidents.html" class="nav-link">Incidents</a></li>
+                    <li><a href="evidence.html" class="nav-link">Evidence</a></li>
+                    <li><a href="actions.html" class="nav-link">Actions</a></li>
+                    <li><a href="summary.html" class="nav-link">Summary</a></li>
+                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
+                    <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <h1 class="hero-title">Employee Investigation Report</h1>
+                    <p class="hero-subtitle">Email Deletion & Data Destruction</p>
+                    <p class="hero-date"><i class="fas fa-calendar-alt"></i> January 30, 2026</p>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metric-grid mb-4">
+                    <div class="metric-card danger">
+                        <div class="metric-value">2,300+</div>
+                        <div class="metric-label">Emails Deleted</div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Major Incidents</div>
+                    </div>
+                    <div class="metric-card success">
+                        <div class="metric-value">454</div>
+                        <div class="metric-label">Recoverable</div>
+                    </div>
+                    <div class="metric-card dark">
+                        <div class="metric-value">15</div>
+                        <div class="metric-label">Lost Forever</div>
+                    </div>
+                    <div class="metric-card primary">
+                        <div class="metric-value"><i class="fas fa-shield-halved"></i></div>
+                        <div class="metric-label">Now Protected</div>
+                    </div>
+                </div>
+
+                <!-- What Happened Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-exclamation-triangle text-danger"></i> What Happened</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>An employee intentionally deleted over <strong>2,300 company emails</strong> before their departure. This included sensitive business data such as patient information, billing records, contracts, and internal communications.</p>
+
+                        <p>IT discovered the deletion, preserved the evidence, and documented everything for leadership review. The mailbox is now protected under litigation hold.</p>
+
+                        <div class="alert alert-danger mt-3">
+                            <i class="fas fa-user-slash"></i>
+                            <div>
+                                <strong>Subject:</strong> Alyn Fernandez (afernandez@hhamedicine.com)<br>
+                                <strong>Investigator:</strong> Akhil Reddy, IT Administrator
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Chart -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-chart-bar"></i> Email Deletion Activity (90 Days)</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="activityChart"></canvas>
+                        </div>
+                        <p class="text-center text-muted mt-2">
+                            <span class="badge badge-danger">Red = Critical</span>
+                            <span class="badge badge-secondary">Blue = Normal</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Critical Incidents Summary -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-bolt text-warning"></i> Critical Incidents</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Emails Deleted</th>
+                                        <th>Duration</th>
+                                        <th>Comparison</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="critical">
+                                        <td><strong>January 27, 2026</strong></td>
+                                        <td><span class="badge badge-danger">1,304</span></td>
+                                        <td>6 seconds</td>
+                                        <td>87x normal</td>
+                                    </tr>
+                                    <tr class="critical">
+                                        <td><strong>January 30, 2026</strong></td>
+                                        <td><span class="badge badge-danger">505</span></td>
+                                        <td>~2 hours</td>
+                                        <td>34x normal</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted mt-2">
+                            <i class="fas fa-info-circle"></i> Normal daily deletion: 5-15 emails
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <h3 class="mb-2"><i class="fas fa-compass"></i> Explore the Report</h3>
+                <div class="nav-cards">
+                    <a href="timeline.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-clock"></i></div>
+                        <div class="nav-card-title">Full Timeline</div>
+                    </a>
+                    <a href="incidents.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-fire"></i></div>
+                        <div class="nav-card-title">Incident Details</div>
+                    </a>
+                    <a href="evidence.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="nav-card-title">View Evidence</div>
+                    </a>
+                    <a href="actions.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="nav-card-title">Actions Taken</div>
+                    </a>
+                    <a href="summary.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="nav-card-title">Executive Summary</div>
+                    </a>
+                    <a href="recommendations.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fas fa-list-check"></i></div>
+                        <div class="nav-card-title">Next Steps</div>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-3 text-center text-muted" style="background: var(--white); border-top: 1px solid var(--border);">
+            <div class="container">
+                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/charts.js"></script>
+    <script>
+        // Mobile navigation toggle
+        function toggleNav() {
+            document.getElementById('navbar-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

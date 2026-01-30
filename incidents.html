@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Incidents | HHA Investigation Report</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fas fa-hospital-user"></i>
+                    HHA Hospital Medicine
+                    <span class="confidential-badge">Confidential</span>
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li><a href="index.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                    <li><a href="incidents.html" class="nav-link active">Incidents</a></li>
+                    <li><a href="evidence.html" class="nav-link">Evidence</a></li>
+                    <li><a href="actions.html" class="nav-link">Actions</a></li>
+                    <li><a href="summary.html" class="nav-link">Summary</a></li>
+                    <li><a href="recommendations.html" class="nav-link">Next Steps</a></li>
+                    <li><button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="card mb-3">
+                    <h1><i class="fas fa-fire text-danger"></i> Critical Incidents</h1>
+                    <p class="text-muted mb-0">Detailed breakdown of the two major deletion events</p>
+                </div>
+
+                <!-- Incident Cards -->
+                <div class="incident-grid">
+                    <!-- Incident 1 -->
+                    <div class="incident-card">
+                        <div class="incident-header critical">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Mass Deletion Event #1</h3>
+                        </div>
+                        <div class="incident-body">
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Date</span>
+                                <span class="incident-stat-value">January 27, 2026</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Time</span>
+                                <span class="incident-stat-value">5:56 PM EST</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Emails Deleted</span>
+                                <span class="incident-stat-value text-danger">1,304</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Duration</span>
+                                <span class="incident-stat-value">6 seconds</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">IP Address</span>
+                                <span class="incident-stat-value">98.58.200.46</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Location</span>
+                                <span class="incident-stat-value">Port Saint Lucie, FL</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Device</span>
+                                <span class="incident-stat-value">Outlook Desktop</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Comparison</span>
+                                <span class="incident-stat-value"><span class="badge badge-danger">87x Normal</span></span>
+                            </div>
+
+                            <div class="alert alert-danger mt-3 mb-0">
+                                <i class="fas fa-bolt"></i>
+                                <div>
+                                    <strong>This is equivalent to 5 months of normal deletion activity completed in 6 seconds.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Incident 2 -->
+                    <div class="incident-card">
+                        <div class="incident-header critical">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Mass Deletion Event #2</h3>
+                        </div>
+                        <div class="incident-body">
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Date</span>
+                                <span class="incident-stat-value">January 30, 2026</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Time</span>
+                                <span class="incident-stat-value">2:13 PM - 4:07 PM EST</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Emails Deleted</span>
+                                <span class="incident-stat-value text-danger">505</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Duration</span>
+                                <span class="incident-stat-value">~2 hours</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">IP Address</span>
+                                <span class="incident-stat-value">98.58.200.46</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Location</span>
+                                <span class="incident-stat-value">Port Saint Lucie, FL</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Device</span>
+                                <span class="incident-stat-value">ActiveSync (Mobile)</span>
+                            </div>
+                            <div class="incident-stat">
+                                <span class="incident-stat-label">Comparison</span>
+                                <span class="incident-stat-value"><span class="badge badge-danger">34x Normal</span></span>
+                            </div>
+
+                            <div class="alert alert-warning mt-3 mb-0">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <strong>This deletion was discovered and stopped by IT on the same day.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Evidence -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-fingerprint"></i> Technical Footprint</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Both incidents originated from the same source, confirming the identity of the user:</p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Source IP Address</strong></td>
+                                    <td>98.58.200.46</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Geographic Location</strong></td>
+                                    <td>Port Saint Lucie, Florida, United States</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Internet Provider</strong></td>
+                                    <td>Comcast Cable Communications, LLC</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Applications Used</strong></td>
+                                    <td>
+                                        <span class="badge badge-secondary">MSExchangeRPC (Outlook Desktop)</span>
+                                        <span class="badge badge-secondary">ActiveSync (Mobile)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Types of Emails Deleted -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-envelope-open-text"></i> Types of Emails Deleted</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>The deleted emails contained sensitive business information across multiple categories:</p>
+
+                        <div class="metric-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-user-injured text-danger"></i></div>
+                                <div class="metric-label">Patient Information</div>
+                                <small class="text-muted">Discharge records, patient data</small>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-dollar-sign text-success"></i></div>
+                                <div class="metric-label">Billing Records</div>
+                                <small class="text-muted">Jackson Billing, A/R aging</small>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-user-md text-primary"></i></div>
+                                <div class="metric-label">Doctor Recruitment</div>
+                                <small class="text-muted">CVs, candidate correspondence</small>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-chart-line text-warning"></i></div>
+                                <div class="metric-label">Financial Reports</div>
+                                <small class="text-muted">Production reports, invoices</small>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-file-contract"></i></div>
+                                <div class="metric-label">Business Agreements</div>
+                                <small class="text-muted">Medrina Agreement, contracts</small>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value"><i class="fas fa-chart-bar text-info"></i></div>
+                                <div class="metric-label">Performance Reports</div>
+                                <small class="text-muted">Press Ganey, metrics</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Deleted Emails -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-list"></i> Sample of Deleted Email Subjects</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Email Subject</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Patients discharge information</td>
+                                        <td><span class="badge badge-danger">Patient Data</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RE: Jackson Billing</td>
+                                        <td><span class="badge badge-success">Billing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CV for Hamzah Qudah, MD - Hospitalist</td>
+                                        <td><span class="badge badge-primary">Recruitment</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RE: Request: A/R aging based on DOS</td>
+                                        <td><span class="badge badge-warning">Financial</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Medrina Proposed Agreement</td>
+                                        <td><span class="badge badge-secondary">Contracts</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>FW: Press Ganey Provider Reports</td>
+                                        <td><span class="badge badge-info">Performance</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HHA consolidated financials as of October 2024</td>
+                                        <td><span class="badge badge-warning">Financial</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>November 2024 Production Report and Invoice</td>
+                                        <td><span class="badge badge-warning">Financial</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RE: HHA Census since July 1 - Jackson Memorial</td>
+                                        <td><span class="badge badge-danger">Operations</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Litigation Hold ENABLED - 365 days</td>
+                                        <td><span class="badge badge-danger">Legal</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted mt-2">
+                            <i class="fas fa-info-circle"></i> These are only a sample. View complete list in the <a href="evidence.html">Evidence</a> section.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-3 text-center text-muted" style="background: var(--white); border-top: 1px solid var(--border);">
+            <div class="container">
+                <small>HHA Hospital Medicine | Confidential Investigation Report | January 2026</small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/charts.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
